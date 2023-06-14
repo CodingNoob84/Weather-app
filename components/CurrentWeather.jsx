@@ -1,6 +1,7 @@
 import React from "react";
 import { weatherdata } from "@/data/weatherdata";
 import Image from "next/image";
+import { TbTemperatureCelsius, TbTemperatureFahrenheit } from "react-icons/tb";
 
 function CurrentWeather() {
   return (
@@ -16,9 +17,11 @@ function CurrentWeather() {
       </div>
       <div className="flex flex-row m-5 justify-between">
         <div className="flex flex-col">
-          <span>Current Temp C/F</span>
-          <span className="text-xl font-bold text-center">
-            {weatherdata.current.temp_c}/{weatherdata.current.temp_f}
+          <span>Current Temp</span>
+          <span className="flex flex-row text-xl font-bold justify-center items-center">
+            {weatherdata.current.temp_c}
+            <TbTemperatureCelsius size={20} />/{weatherdata.current.temp_f}
+            <TbTemperatureFahrenheit size={20} />
           </span>
         </div>
         <div className="flex flex-col">

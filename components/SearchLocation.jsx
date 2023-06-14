@@ -25,17 +25,17 @@ function SearchLocation({ setCityName }) {
   };
 
   return (
-    <div className="border rounded-lg shadow-xl bg-slate-100 h-[100px] w-[400px] md:w-[800px] flex justify-center items-center">
-      <div className="flex flex-row p-2">
+    <div className="border rounded-lg shadow-xl bg-gray-700 text-white h-[100px] w-[300px] md:w-[800px] flex justify-center items-center">
+      <div className="flex flex-col md:flex-row p-2">
         <div className="px-2">Search Location:</div>
         <div className="relative">
           <input
             ref={inputRef}
             type="text"
-            className="border w-[200px] h-[30px] p-2"
+            className="border w-[200px] h-[30px] p-2 bg-gray-600"
             onChange={handleChange}
           />
-          <div className="absolute w-[200px] border bg-white flex flex-col">
+          <div className="absolute w-[200px] border bg-gray-600 flex flex-col">
             {locations &&
               locations.map((location, index) => (
                 <div
