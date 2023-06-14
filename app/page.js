@@ -3,6 +3,7 @@ import SearchLocation from "@/components/SearchLocation";
 import { useEffect, useState } from "react";
 import WeatherComponent from "@/components/WeatherComponent";
 import { getWeather } from "@/Lib/services";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [cityName, setCityName] = useState("");
@@ -26,6 +27,7 @@ export default function Home() {
       <div className="text-2xl font-bold">Weather App</div>
       <SearchLocation setCityName={setCityName} />
       {weatherData && <WeatherComponent weatherData={weatherData} />}
+      <Footer />
     </main>
   );
 }

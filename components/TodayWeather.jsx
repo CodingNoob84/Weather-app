@@ -5,7 +5,7 @@ import { TbTemperatureCelsius, TbTemperatureFahrenheit } from "react-icons/tb";
 
 function TodayWeather({ date, location, day }) {
   return (
-    <div className=" my-5 border w-[400px] md:w-[800px] shadow-2xl bg-slate-600 text-slate-200 rounded-3xl">
+    <div className=" my-5 border w-[300px] md:w-[800px] shadow-2xl bg-slate-600 text-slate-200 rounded-3xl">
       <div className="flex flex-row m-5 justify-between">
         <div className="flex flex-col md:flex-row">
           {location.name}, {location.region}, {location.country}

@@ -17,7 +17,7 @@ function HourlyWeather({ hour }) {
     }
   };
   return (
-    <div className="my-5 border w-[400px] md:w-[800px] shadow-2xl bg-slate-500 text-slate-200 rounded-2xl">
+    <div className="my-5 border w-[400px] md:w-[800px] shadow-2xl bg-slate-600 text-slate-200 rounded-2xl">
       <table className="w-full">
         <thead>
           <tr>
@@ -30,7 +30,7 @@ function HourlyWeather({ hour }) {
           {hour.map((hourly, i) => (
             <React.Fragment key={i}>
               <tr
-                className={` border-slate-400 cursor-pointer hover:bg-slate-400 ${
+                className={` border-slate-400 cursor-pointer hover:bg-slate-500 ${
                   selectRow === i ? "" : "border-b"
                 }`}
                 onClick={() => handleSelectRow(i)}
@@ -48,10 +48,10 @@ function HourlyWeather({ hour }) {
               </tr>
               {selectRow === i && (
                 <tr>
-                  <td colSpan={3} className="text-center">
-                    <div className="flex flex-col md:flex-row md:gap-10 ">
-                      <div className="flex flex-row md:w-full gap-[30px] my-4">
-                        <div className="flex flex-col w-[170px]">
+                  <td colSpan={3} className="text-center md:px-16">
+                    <div className="flex flex-col md:flex-row justify-center items-center">
+                      <div className="flex flex-row md:w-full gap-[30px] my-5">
+                        <div className="flex flex-col w-[150px]">
                           <span>Current Temp</span>
                           <span className="flex flex-row text-xl font-bold justify-center items-center">
                             {hourly.temp_c}
@@ -59,7 +59,7 @@ function HourlyWeather({ hour }) {
                             <TbTemperatureFahrenheit size={20} />
                           </span>
                         </div>
-                        <div className="flex flex-col w-[170px]">
+                        <div className="flex flex-col w-[150px]">
                           <span>RealFeel Temp</span>
                           <span className="flex flex-row text-xl font-bold justify-center items-center">
                             {hourly.feelslike_c}
@@ -70,13 +70,13 @@ function HourlyWeather({ hour }) {
                         </div>
                       </div>
                       <div className="flex flex-row md:w-full gap-[30px] my-4">
-                        <div className="flex flex-col w-[170px]">
+                        <div className="flex flex-col w-[150px]">
                           <span>Humidity</span>
                           <span className="text-xl font-bold text-center">
                             {hourly.humidity}
                           </span>
                         </div>
-                        <div className="flex flex-col w-[170px] justify-center items-center">
+                        <div className="flex flex-col w-[150px] justify-center items-center">
                           <span> {hourly.condition.text}</span>
                           <Image
                             src={`https:${hourly.condition.icon}`}
